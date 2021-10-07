@@ -1,40 +1,16 @@
-#Reading in Data#
+library(tidyverse)
 
-surveys <- read.csv("data/portal_data_joined.csv")
+surveys_t <- read.csv("data/portal_data_joined.csv");surveys_t
 
-#Inspecting data#
 
-# Number of rows:
+surveys_base <- surveys_t[c("species_id","weight","plot_type")];surveys_base
 
-nrow(surveys)
 
-#Number of columns 
+surveys_base <- surveys_base[1:60,]; surveys_base
 
-ncol(surveys)
 
-#Look at the top or bottom of the data
+surveys_base$species_id <- as.character(surveys_base$species_id)
 
-head(surveys)
-tail(surveys)
+surveys_base$plot_type <- as.character(surveys_base$plot_type)
 
-#Look at data in its entirety
-
-View(surveys)
-
-#More about the data
-
-str(surveys)
-
-#Indexing 
-
-#Inside brackets [row, column]
-
-surveys [1,1]
-
-surveys[1:6,]
-
-#subsetting with column name
-
-surveys["species_id"]
-colnames(surveys)
-
+surveys_base <- surveys_base[complete.cases(surveys_base),];surveys_base
