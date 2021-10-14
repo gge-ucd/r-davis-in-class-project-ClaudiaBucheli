@@ -5,6 +5,8 @@ library(tidyverse)
 
 surveys <- read.csv("data/portal_data_joined.csv")
 
+surveys <- read.csv("data/survey_data_spreadsheet_messy.xls")
+
 #Inspecting data#
 
 # Number of rows:

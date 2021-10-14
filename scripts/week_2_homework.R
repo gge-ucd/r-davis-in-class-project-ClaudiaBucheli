@@ -20,3 +20,11 @@ plus10
 
 final<- plus10[c(TRUE, FALSE)]
 final
+
+
+############# seq function seq() generates regular sequences  from a certain 
+##value to another value skipping by a certain number seq(from =1, to = 23, by = 2)
+
+
+###other example seq(1,23,2) which is the same as above 
+
