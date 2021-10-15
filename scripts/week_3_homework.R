@@ -12,6 +12,12 @@ surveys_base <- surveys_base[1:60,]; surveys_base
 
 surveys_base$species_id <- as.character(surveys_base$species_id)
 
+
 surveys_base$plot_type <- as.character(surveys_base$plot_type)
 
+
 surveys_base <- surveys_base[complete.cases(surveys_base),];surveys_base
+
+
+str(surveys_base)
+
