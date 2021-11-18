@@ -20,6 +20,7 @@ surveys_wide <- surveys_wide %>%
   pivot_wider(names_from = plot_type, values_from = mean_hindfoot) %>% 
   arrange(Control); surveys_wide
 
+# arrange(control) arranges your data in an ascending order
 #Problem 2
 
 summary (surveys$weight)
