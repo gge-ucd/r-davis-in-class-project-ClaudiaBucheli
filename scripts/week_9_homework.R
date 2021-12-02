@@ -14,6 +14,14 @@ mloa1 <- mloa %>%
                                   min),tz="UTC")) %>%
   mutate(datetimeLocal = with_tz(datetime,tz = "Pacific/Honolulu"))
 
-
-  
-         
+mloa1 %>% 
+  mutate(localMon= month(datetimeLocal, label=TRUE )) %>% 
+  mutate(localHour = hour(datetimeLocal)) %>% 
+  group_by(localMon, localHour) %>% 
+  summarize(meantp = mean(temp_C_2m)) %>% 
+  ggplot(aes(x=localMon, y =meantp)) + 
+  geom_point(aes(col = localHour)) +
+  scale_color_viridis_c() +
+  xlab("Month") +
+  ylab("Mean temperature (degrees C)") +
+  theme_classic()       
